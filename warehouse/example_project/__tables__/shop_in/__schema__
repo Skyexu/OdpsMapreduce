@@ -1,0 +1,3 @@
+project=example_project
+table=shop_in
+columns= user_id:String,shop_id:String,time_stamp:String,longitude:Double,latitude:Double,wifi_infos:String

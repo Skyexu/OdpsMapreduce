@@ -1,0 +1,3 @@
+project=example_project
+table=shop_out
+columns=row_id:String,user_id:String,shop_id:String,time_stamp:String,longitude:Double,latitude:Double,bssid:String,strength:Double,connect:String
