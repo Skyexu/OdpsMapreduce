@@ -1,6 +1,7 @@
-example.bin/
-examples/
-.settings/
+/bin/
+/example.bin
+/examples
+/.settings
+/temp
 .classpath
 .project
-temp/
