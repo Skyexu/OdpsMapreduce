@@ -1,0 +1,6 @@
+example.bin/
+examples/
+.settings/
+.classpath
+.project
+temp/
