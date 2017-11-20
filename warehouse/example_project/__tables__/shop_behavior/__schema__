@@ -1,3 +1,3 @@
 project=example_project
-table=shop_in
+table=shop_behavior
 columns= user_id:String,shop_id:String,time_stamp:String,longitude:Double,latitude:Double,wifi_infos:String

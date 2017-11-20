@@ -1,4 +1,4 @@
-package Test;
+package com.legends.mr;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,11 +11,12 @@ import com.aliyun.odps.counter.Counter;
 import com.aliyun.odps.data.Record;
 import com.aliyun.odps.mapred.MapperBase;
 /**
- * 切分wifi_info 信息，一行变多行
+ * 切分 user_shop_behavior 表的   wifi_info 信息，一行变多行
+ * 
  * @author Skye
  *
  */
-public class TestOnlyMap extends MapperBase {
+public class SplitBehaviorWifiOnlyMap extends MapperBase {
 	// 计数器，用于对 row_id 计数
 	Counter gCnt;
 	
@@ -75,8 +76,8 @@ public class TestOnlyMap extends MapperBase {
 		result_record.set("user_id", user_id);
 		result_record.set("shop_id", shop_id);
 		result_record.set("time_stamp", convertTime(time_stamp));
-		result_record.set("longitude", longitude);
-		result_record.set("latitude", latitude);
+		result_record.set("user_lon", longitude);
+		result_record.set("user_lat", latitude);
 		
 		// 输出 wifi_info 信息
 		for(String wifi:wifi_infos){
