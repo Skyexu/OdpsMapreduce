@@ -26,12 +26,17 @@ public class RestoreWifiReduce extends ReducerBase {
 	
 	@Override
 	public void setup(TaskContext context) throws IOException {
-		result = context.createOutputRecord();
+		// 此 句若加在这里，会出现上一行的结果保留问题，目测是odps本地插件的问题
+		//result = context.createOutputRecord();
+		
 	}
 
 	@Override
 	public void reduce(Record key, Iterator<Record> values, TaskContext context) throws IOException {
 		int index = 0;
+		
+		result = context.createOutputRecord();
+		
 		// 写 wifi 相关信息之前的列，共六列
 		for (int i = 0; i < key.getColumnCount(); i++) {
 			result.set(index++, key.get(i));
