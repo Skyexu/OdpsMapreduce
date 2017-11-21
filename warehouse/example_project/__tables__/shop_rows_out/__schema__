@@ -1,0 +1,3 @@
+project=example_project
+table=shop_rows_out
+columns= append_id:String,row_id:STRING,user_id:String,shop_id:String,mall_id:STRING,time_stamp:String,date:STRING,hour:STRING,dayofweek:BIGINT,user_lon:DOUBLE,user_lat:DOUBLE,b_0:String,b_1:String,b_2:String,b_3:String,b_4:String,b_5:String,b_6:String,b_7:String,b_8:String,b_9:String,s_0:Double,s_1:Double,s_2:Double,s_3:Double,s_4:Double,s_5:Double,s_6:Double,s_7:Double,s_8:Double,s_9:Double,c_0:String,c_1:String,c_2:String,c_3:String,c_4:String,c_5:String,c_6:String,c_7:String,c_8:String,c_9:String

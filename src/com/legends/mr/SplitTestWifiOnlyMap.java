@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 import com.aliyun.odps.counter.Counter;
 import com.aliyun.odps.data.Record;
@@ -35,16 +38,44 @@ public class SplitTestWifiOnlyMap extends MapperBase {
 			Date date = null;
 			
 			try {
-				date = formatter2.parse(time);
+				date = formatter.parse(time);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
-			   
+			
 			
 			
 			return formatter2.format(date);
 		}
+		
+		private int convertWeek(String time){
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+			
+			SimpleDateFormat formatter2 = new SimpleDateFormat("EEE",Locale.ENGLISH);
+			Date date = null;
+			// Mon Tues Wed Thur Fri Sat Sun
+			Map<String, Integer> weekMap = new HashMap<>();
+			weekMap.put("Sun", 0);
+			weekMap.put("Mon", 1);
+			weekMap.put("Tue", 2);
+			weekMap.put("Wed", 3);
+			weekMap.put("Thu", 4);
+			weekMap.put("Fri", 5);
+			weekMap.put("Sat", 6);
+			try {
+				date = formatter.parse(time);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			String week = formatter2.format(date);
+			
+			int weekInt = weekMap.get(week);
+			
+			return weekInt;
+		}
+		
 		@Override
 		public void setup(TaskContext context) throws IOException {
 			// 获取计数器
@@ -78,7 +109,7 @@ public class SplitTestWifiOnlyMap extends MapperBase {
 			// 输出 wifi_info 信息
 			for(String wifi:wifi_infos){
 				//bssid:String,strength:String,connect:String
-				System.out.println(wifi);
+				//System.out.println(wifi);
 				String[] info_splits = wifi.split("\\|");
 				result_record.set("bssid", info_splits[0]);
 				result_record.set("strength", convertStrength(info_splits[1]));
@@ -91,6 +122,5 @@ public class SplitTestWifiOnlyMap extends MapperBase {
 		@Override
 		public void cleanup(TaskContext context) throws IOException {
 		}
-
 
 }

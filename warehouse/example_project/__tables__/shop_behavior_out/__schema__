@@ -1,3 +1,3 @@
 project=example_project
 table=shop_behavior_out
-columns=rowid:String,user_id:String,shop_id:String,time_stamp:String,user_lon:Double,user_lat:Double,bssid:String,strength:Double,connect:String
+columns=rowid:String,user_id:String,shop_id:String,time_stamp:String,date:String,hour:String,dayofweek:Bigint,user_lon:Double,user_lat:Double,bssid:String,strength:String,connect:String

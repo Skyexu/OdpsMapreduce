@@ -1,0 +1,3 @@
+project=example_project
+table=hy_in
+columns= append_id:Bigint,row_id:String,user_id:String,shop_id:String,mall_id:String,time_stamp:String,longitude:Double,latitude:Double,wifi_infos:String

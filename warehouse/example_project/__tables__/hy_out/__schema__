@@ -1,0 +1,3 @@
+project=example_project
+table=hy_out
+columns=append_id:String,rowid:String,user_id:String,shop_id:String,mall_id:String,time_stamp:String,date:String,hour:String,dayofweek:Bigint,user_lon:Double,user_lat:Double,bssid:String,strength:String,connect:String
