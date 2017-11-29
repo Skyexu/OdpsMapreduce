@@ -15,7 +15,7 @@ import com.aliyun.odps.data.Record;
 import com.aliyun.odps.mapred.ReducerBase;
 
 /**
- * 将 多行 wifi 变为 一行的 reduce 函数
+ * 将 多行 wifi 变为 一行,并按强度排序
  * 
  * @author Skye
  *
@@ -23,6 +23,7 @@ import com.aliyun.odps.mapred.ReducerBase;
 public class RestoreWifiReduce extends ReducerBase {
 	
 	private Record result = null;
+	
 	
 	@Override
 	public void setup(TaskContext context) throws IOException {

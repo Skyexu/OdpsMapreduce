@@ -1,0 +1,3 @@
+project=example_project
+table=wifi_ratio_out
+columns=append_id:String,shop_id:String,wifi_ratio:Double,same_wifi_num:Bigint

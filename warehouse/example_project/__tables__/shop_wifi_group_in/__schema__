@@ -1,0 +1,3 @@
+project=example_project
+table=shop_wifi_group_in
+columns=shop_id:String,wifi_infos:String

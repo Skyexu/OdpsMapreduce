@@ -1,0 +1,3 @@
+project=example_project
+table=wifi_ratio_in
+columns=append_id:String,b_0:String,b_1:String,b_2:String,b_3:String,b_4:String,b_5:String,b_6:String,b_7:String,b_8:String,b_9:String,shop_id:String,wifi_bssids:String

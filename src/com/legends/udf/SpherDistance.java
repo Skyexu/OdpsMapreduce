@@ -1,5 +1,7 @@
 package com.legends.udf;
 
+import java.math.BigDecimal;
+
 import com.aliyun.odps.udf.UDF;
 
 public class SpherDistance extends UDF {
@@ -23,7 +25,7 @@ public class SpherDistance extends UDF {
 	    double b = rad(lon1) - rad(lon2);
 	    Double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2)+Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2))); 
 	    s = s * EARTH_RADIUS * 1000; 
-	    
+	    s = new BigDecimal(s).setScale(6, BigDecimal.ROUND_HALF_UP).doubleValue();
 	    return s;
 	}
 
