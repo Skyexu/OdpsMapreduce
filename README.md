@@ -1,6 +1,7 @@
 # 说明文档
 
-包括 Mapreduce 与 UDF 代码，以及测试类
+包括 Mapreduce 与 UDF 代码，以及测试类.
+wearhouse 是本地测试的数据表，直接在插件自带的 example 库上加表数据
 
 ## 包内容说明
 
