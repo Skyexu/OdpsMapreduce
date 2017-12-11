@@ -1,4 +1,4 @@
-package com.legends.mr.wifiratio;
+package com.legends.mr;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -6,7 +6,11 @@ import java.util.Set;
 
 import com.aliyun.odps.data.Record;
 import com.aliyun.odps.mapred.MapperBase;
-
+/*
+* 特征区间里可以统计出在shop出现过的wifi_id
+* 训练数据中的wifi_infos里面的wifi有多少个出现在某个shop中，出现个数除以该条样本wifi_infos里面总的wifi个数
+* 
+*/
 public class WifiRatioOnlyMap extends MapperBase {
 	private Record key;
 	private Record value;

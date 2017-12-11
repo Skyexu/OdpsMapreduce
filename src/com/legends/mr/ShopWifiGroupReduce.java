@@ -1,4 +1,4 @@
-package com.legends.mr.wifinum;
+package com.legends.mr;
 
 import java.io.IOException;
 import java.util.HashSet;

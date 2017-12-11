@@ -13,7 +13,11 @@ import com.aliyun.odps.mapred.conf.JobConf;
 import com.aliyun.odps.mapred.utils.InputUtils;
 import com.aliyun.odps.mapred.utils.OutputUtils;
 import com.aliyun.odps.mapred.utils.SchemaUtils;
-
+/**
+ * 输入两个经纬度，计算最小距离
+ * @author Skye
+ *
+ */
 public class DistanceShopMap extends MapperBase{
 
 	private Record key;

@@ -8,8 +8,8 @@ import com.aliyun.odps.mapred.conf.JobConf;
 import com.aliyun.odps.mapred.utils.InputUtils;
 import com.aliyun.odps.mapred.utils.OutputUtils;
 import com.aliyun.odps.mapred.utils.SchemaUtils;
-import com.legends.mr.wifinum.ShopWifiGroupMap;
-import com.legends.mr.wifinum.ShopWifiGroupReduce;
+import com.legends.mr.ShopWifiGroupMap;
+import com.legends.mr.ShopWifiGroupReduce;
 
 public class ShopWifiGroupMain {
 

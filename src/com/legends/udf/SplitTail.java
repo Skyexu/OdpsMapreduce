@@ -1,7 +1,11 @@
 package com.legends.udf;
 
 import com.aliyun.odps.udf.UDF;
-
+/**
+ * 切分数据
+ * @author Skye
+ *
+ */
 public class SplitTail extends UDF {
 
 	// TODO define parameters and return type, e.g., public Long evaluate(Long a, Long b)

@@ -8,8 +8,7 @@ import com.aliyun.odps.mapred.conf.JobConf;
 import com.aliyun.odps.mapred.utils.InputUtils;
 import com.aliyun.odps.mapred.utils.OutputUtils;
 import com.aliyun.odps.mapred.utils.SchemaUtils;
-
-import com.legends.mr.wifiratio.WifiRatioOnlyMap;
+import com.legends.mr.WifiRatioOnlyMap;
 
 public class WifiRatioMain {
 
