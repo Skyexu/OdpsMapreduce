@@ -29,6 +29,5 @@ wearhouse 是本地测试的数据表，直接在插件自带的 example 库上�
 | 名字 | 功能 |
 | :----: | :----: |
 | GetJsonKV | 解析多分类输出结果的 prediction_detail Json 格式，并展开为多行 UDTF  |
-| SpherDistance | 将 多行 wifi 变为 一行 |
-| DistanceShop   | 计算球面距离的 UDF |
+| SpherDistance | 计算球面距离的 UDF |
 | SplitTail | 简单切分 '_'，返回 bigint |
