@@ -1,0 +1,3 @@
+project=example_project
+table=shop_assi_in
+columns=append_id:string,row_id:string,user_id:string,shop_id:string,mall_id:string,time_stamp:string,date:string,hour:string,dayofweek:string,user_lon:double,user_lat:double,bssid:string,strength:string,connect:string,bssid_appear_num:bigint,assi:double

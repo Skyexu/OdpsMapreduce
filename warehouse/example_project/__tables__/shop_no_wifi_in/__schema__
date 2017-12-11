@@ -1,0 +1,3 @@
+project=example_project
+table=shop_no_wifi_in
+columns=append_id:string,user_id:string,shop_id:string,mall_id:string,time_stamp:string,date:string,hour:string,dayofweek:string,user_lon:double,user_lat:double,shop_lon:double,shop_lat:double,category_id:string,price:double

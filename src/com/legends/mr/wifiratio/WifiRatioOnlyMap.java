@@ -14,6 +14,7 @@ public class WifiRatioOnlyMap extends MapperBase {
 	public void setup(TaskContext context) throws IOException {
 		key = context.createMapOutputKeyRecord();
         value = context.createMapOutputValueRecord();
+        
 	}
 
 	@Override
@@ -32,39 +33,42 @@ public class WifiRatioOnlyMap extends MapperBase {
 			result.set("wifi_ratio",999.0);
 			result.set("same_wifi_num",0);
 			context.write(result);
-		}
-		
-		String wifi_bssids = record.get("wifi_bssids").toString();
-		//System.out.println("wifi_bssids: " + wifi_bssids);
-		String[] bssids = wifi_bssids.split("\\|");
-		
-		Set<String> shopWifiBssids = new HashSet<>();
-		for(String bssid: bssids){
-			shopWifiBssids.add(bssid);
-		}	
-		
-		int sameNum = 0;
-		int wifiCount = 0;
-		for(int i = 1;i < 11;i++){
+			//System.out.println("Skye: " + shop_id + " has not shown before");
+		}else {
+			String wifi_bssids = record.get("wifi_bssids").toString();
+			//System.out.println("wifi_bssids: " + wifi_bssids);
+			String[] bssids = wifi_bssids.split("\\|");
 			
-			if (record.isNull(i)) {
-				continue;
+			Set<String> shopWifiBssids = new HashSet<>();
+			for(String bssid: bssids){
+				shopWifiBssids.add(bssid);
+			}	
+			
+			int sameNum = 0;
+			int wifiCount = 0;
+			for(int i = 1;i < 11;i++){
+				
+				if (record.isNull(i)) {
+					continue;
+				}
+				String bssid = record.get(i).toString();
+				wifiCount ++;
+				if (shopWifiBssids.contains(bssid)) {
+					sameNum ++;
+				}
 			}
-			String bssid = record.get(i).toString();
-			wifiCount ++;
-			if (shopWifiBssids.contains(bssid)) {
-				sameNum ++;
-			}
+			//System.out.println("wifiCount: " + wifiCount);
+			double wifiRatio = sameNum * 1.0 / wifiCount;
+			
+			result.set("append_id",append_id);
+			result.set("shop_id",shop_id);
+			result.set("wifi_ratio",wifiRatio);
+			result.set("same_wifi_num",sameNum);
+			
+			context.write(result);
 		}
-		//System.out.println("wifiCount: " + wifiCount);
-		double wifiRatio = sameNum * 1.0 / wifiCount;
 		
-		result.set("append_id",append_id);
-		result.set("shop_id",shop_id);
-		result.set("wifi_ratio",wifiRatio);
-		result.set("same_wifi_num",sameNum);
 		
-		context.write(result);
 		
 	}
 
